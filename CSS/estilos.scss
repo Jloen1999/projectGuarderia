@@ -1,0 +1,114 @@
+@use "utilidades";
+
+*{
+  font-family: utilidades.$fuenteRoboto;
+
+}
+body{
+  background-color: white;
+}
+
+@mixin bordeDerecho(){
+  position: absolute;
+  right: 0;
+}
+@mixin bordeIzquierdo(){ //funcion que distribuye un elemento en el borde derecho
+  position: absolute;
+  left: 0;
+}
+
+.bordeDerecho{ //Es para distribuir un elemento en el borde derecho
+  @include bordeDerecho
+}
+
+.titulo{ // es para cambiar el tipo de letra del título principal
+  font-family: utilidades.$fuenteRubik
+}
+
+.form-check{ //es para subir el check de mostrar contraseña
+  margin-top: -1em;
+}
+.fondo{ //es para cambiar el color de fondo a negro claro
+  background-color: utilidades.$negroClaro
+}
+
+.navbar{ //es para subir la barra de navegación
+  margin-top: 2em;
+}
+
+.nav-link:hover{ //Ponemos el fondo del enlace a negro cuando acercamos el cursor
+  background-color:black;
+}
+.pt-5{ //movemos el logo junto al titulo a la derecha
+  margin-left: 2em;
+}
+
+.check{
+  font-size: 11px;
+}
+
+.news{
+  list-style: none
+}
+
+.map, #map_container{ //Centramos
+   display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 767px){
+  // Reducimos el tamaño de texto de todos los elementos cuando
+//el tamaño del dispositivo es menor o igual que 767px.
+//de modo que el input de buscar no se vea super pequeño
+  *{
+    font-size: 10px
+  }
+  //Movemos en el borde izquierdo
+  .map, #map_container{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+
+}
+
+// Separamos la barra de búsqueda del menú de navegación cuando
+//el tamaño del dispositivo sea igual o mayor que 576px
+@media screen and (min-width: 576px){
+   .collapse{
+  display: flex;
+  justify-content: space-between;
+}
+}
+
+.experiencia{
+  padding: 40px 40px 60px 40px;
+}
+
+.experiencia .columna{
+  padding: 20px;
+  border: 2px solid #8080804d;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.experiencia .columna:hover{
+  background-color: utilidades.$negroClaro
+}
+
+//Cuando el dispositivo tenga el tamaño menor o igual que 767px
+//ocultamos las dos últimas imágenes contenidas en los dos
+//últimos div
+@media only screen and (max-width: 767px){
+  #galeria div:nth-last-of-type(-n+2){
+    display: none;
+  }
+}
+
+#cerrarSesion {
+    display: none;
+}
+

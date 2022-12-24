@@ -1,0 +1,176 @@
+
+/*
+    Estilos para ordenadores.
+    Estos estilos son utilizados sólo si el dispositivo
+    tiene como tamaño mínimo los 768 pixeles.
+*/
+@media screen and (min-width: 768px) {
+    /*
+        Hacemos que el menu desplegable ocupe la posicion
+        de su padre
+    */
+    .menu li:hover .menu_desplegable {
+        display: block;
+        position: absolute;
+        background-color: #333;
+    }
+
+    /*
+        Hacemos que las cabeceras de las tablas tengan un
+        color de texto y de fondo diferente
+    */
+    th {
+        background-color: #333;
+        color: white;
+    }
+
+    /*
+        Para tablas con rayas de cebra, utilizamos un
+        selector para agregar a todas las filas de tabla
+        pares (o impares)
+    */
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+}
+
+/*
+    Estilos para tablet y móvil.
+    Estos estilos son utilizados sólo si el dispositivo
+    tiene como tamaño máximo los 768 pixeles.
+    */
+@media screen and (max-width: 768px) {
+
+    /*
+        Establecemos relleno izquierdo y derecho para el formulario
+        de login
+    */
+    .formulario {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    /*
+        Cambiamos el aspecto de la barra de navegacion y el pie de página
+        para que todos los elementos se vean en columna
+    */
+    .menu, footer {
+        flex-direction: column;
+    }
+
+    .menu a:hover {
+        background-color: grey;
+    }
+
+    /*
+        Cambiamos el menu deplegable para que ocupe todo el espacio sin heredar la
+        posicion de su elemento padre
+    */
+    .menu li:hover .menu_desplegable {
+        display: block;
+    }
+
+    .cabecera_superior, nav, footer {
+        background-color: #024959;
+    }
+
+    /*
+        Hacemos que las casillas input con el valor texto, contraseña,
+        telefono, fecha, fecha y hora, de seleccion y de agrupacion
+        ocupen todo el espacio de su bloque
+    */
+    input[type=text], input[type=password], input[type=tel],
+            input[type=date], input[type=datetime-local], select, fieldset {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    /*
+        Hacemos que las imagenes de la pagina de servicio ocupen todo
+        el espacio de su bloque
+    */
+    .img_servicio, .img_cs {
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    .servicio_clear::after {
+        display: block;
+    }
+
+    /*
+        Hacemos que todos los elementos de la tabla ocupen todo
+        el espacio de la tabla
+    */
+    table {
+        width: 100%;
+    }
+
+    /* Mostramos todos los elementos de la tabla en columna */
+    table tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid grey;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    /* Hacemos desaparecer a todos los titulos de la tabla */
+    .tabla_cabecera {
+        display: none;
+    }
+
+    /*  Hacemos que todos los td que tengan ese atributo,
+        obtengan la posibilidad de tener un elemento al
+        lado del otro
+    */
+    table td[data-titulo] {
+        display: flex;
+    }
+
+    /*
+        Todos los td que tengan ese atributo, van a tener
+        añadido su valor antes del contenido del td
+    */
+    table td[data-titulo]::before {
+        content: attr( data-titulo );
+        width: 55%;
+    }
+
+    /*
+        Hacemos que nuestro mapa vaya ajustandose al tamaño del
+        dispositivo
+    */
+    #mapa {
+        position: relative;
+        padding-bottom: 75%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    #mapa iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Cambiamos el espacio de relleno del pie de página */
+    .footer_derecho, .footer_izquierdo  {
+        padding: 1% 10%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .menu li:hover .menu_desplegable {
+        display: none;
+    }
+
+    .contenedor {
+        font-size: 12px;
+    }
+}

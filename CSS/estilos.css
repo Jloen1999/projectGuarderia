@@ -1,0 +1,90 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.bordeDerecho {
+  position: absolute;
+  right: 0;
+}
+
+.titulo {
+  font-family: "Rubik Gemstones", cursive;
+}
+
+.form-check {
+  margin-top: -1em;
+}
+
+.fondo {
+  background-color: #333;
+}
+
+.navbar {
+  margin-top: 2em;
+}
+
+.nav-link:hover {
+  background-color: black;
+}
+
+.pt-5 {
+  margin-left: 2em;
+}
+
+.check {
+  font-size: 11px;
+}
+
+.news {
+  list-style: none;
+}
+
+.map, #map_container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  * {
+    font-size: 10px;
+  }
+  .map, #map_container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+}
+@media screen and (min-width: 576px) {
+  .collapse {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.experiencia {
+  padding: 40px 40px 60px 40px;
+}
+
+.experiencia .columna {
+  padding: 20px;
+  border: 2px solid rgba(128, 128, 128, 0.3019607843);
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.experiencia .columna:hover {
+  background-color: #333;
+}
+
+@media only screen and (max-width: 767px) {
+  #galeria div:nth-last-of-type(-n+2) {
+    display: none;
+  }
+}
+#cerrarSesion {
+  display: none;
+}
+
+/*# sourceMappingURL=estilos2.css.map */

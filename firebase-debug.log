@@ -1,0 +1,58 @@
+[debug] [2022-12-24T08:28:37.692Z] ----------------------------------------------------------------------
+[debug] [2022-12-24T08:28:37.695Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-12-24T08:28:37.696Z] CLI Version:   11.19.0
+[debug] [2022-12-24T08:28:37.696Z] Platform:      win32
+[debug] [2022-12-24T08:28:37.696Z] Node Version:  v18.12.1
+[debug] [2022-12-24T08:28:37.697Z] Time:          Sat Dec 24 2022 09:28:37 GMT+0100 (hora estándar de Europa central)
+[debug] [2022-12-24T08:28:37.698Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-24T08:28:37.829Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-24T08:28:37.830Z] > authorizing via signed-in user (jloelananguan@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\JLOel
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-12-24T08:28:54.295Z] Using project from CLI flag: proyectodpw-d72ea
+[debug] [2022-12-24T08:28:54.301Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/proyectodpw-d72ea [none]
+[debug] [2022-12-24T08:28:54.656Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/proyectodpw-d72ea 200
+[debug] [2022-12-24T08:28:54.657Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/proyectodpw-d72ea {"projectId":"proyectodpw-d72ea","projectNumber":"86631037551","displayName":"ProyectoDPW","name":"projects/proyectodpw-d72ea","resources":{"hostingSite":"proyectodpw-d72ea"},"state":"ACTIVE","etag":"1_63f274b1-837c-4e3e-a9be-5d46b95a2a35"}
+[info] i  Using project proyectodpw-d72ea (ProyectoDPW) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2022-12-24T08:34:16.104Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2022-12-24T08:34:16.180Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2022-12-24T08:34:16.180Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"9.15.0","browserURL":"https://www.gstatic.com/firebasejs/9.15.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/9.15.0/firebase.tgz"},"live":{"version":"9.15","browserURL":"https://www.gstatic.com/firebasejs/live/9.15/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/9.15/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/9.15.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/9.15.0/firebase-auth/cordova.js","auth/react-native":"https://www.gstatic.com/firebasejs/9.15.0/firebase-auth/react-native.js","functions":"https://www.gstatic.com/firebasejs/9.15.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/9.15.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/9.15.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/9.15.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/9.15.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/9.15.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.memory.js"}}
+[debug] [2022-12-24T08:34:16.281Z] Error: Path contains invalid characters: C:\Users\JLOel\C:\Users\JLOel\Desktop\tramitesPlanificaciones\estudios\UEX\Curso2\Asignaturas\DPW(OPT2)\Actividades\ProyectoFinal\Entregas\JavaScript
+    at checkPath (C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\utils.js:16:21)
+    at module.exports.makeDirSync (C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\make-dir.js:21:3)
+    at Object.createFileSync (C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:59:45)
+    at Config.writeProjectFile (C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:152:12)
+    at C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:176:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async doSetup (C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\hosting\index.js:133:9)
+    at async init (C:\Users\JLOel\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:36:9)
+[error] 
+[error] Error: An unexpected error has occurred.

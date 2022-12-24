@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Título-->
+    <title>Contacto</title>
+    <!--Metadatos-->
+    <meta charset="utf-8">
+    <meta name="description" content="Página de contacto de la GuarderíaCC">
+    <meta name="keywords"
+          content="guarderíacc, Cáceres, guardería de Cáceres,contacto, contacto de la GuarderíaCC, guardería">
+    <meta name="author" content="Jose Luis Obiang Ela Nanguan">
+    <!-- Responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="../Images/logo.jpg"/>
+    <!--fonts Google-->
+    <!--Rubik-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+    <!--Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik+Gemstones&display=swap"
+          rel="stylesheet">
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <!-- JS -->
+    <script src="../js/funciones.js" defer></script>
+    <script src="../js/ClaseUsuario.js" defer></script>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="ocultarIniciarSesion();">
+
+<!--Header: encapsula el contenido de la cabecera en 2 secciones-->
+<div class="align-items-center justify-content-center">
+    <header class="d-flex flex-column">
+        <section class="d-flex align-items-center justify-content-center fondo">
+            <!--Botón para cambiar el color(oscuro|blanco) de la página-->
+            <button type="button" id="modo" class="btn btn-dark" onclick="changeColorPage()">Modo Oscuro</button>
+            <article class="bordeDerecho">
+                <!--Redes sociales de la Guardería-->
+                <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+                <a href="https://facebook.com"><i class="bi bi-twitter"></i></a>
+                <a href="https://facebook.com"><i class="bi bi-instagram"></i></a>
+                 <!--Elige el idioma de la página-->
+                <label for="idioma">Idioma:</label>
+                <select id="idioma">
+                    <option value="en">Inglés</option>
+                    <option value="es">Español</option>
+                </select>
+
+                <button type="button" id="traducir">Traducir</button>
+                <script src="../traductor.js"></script>
+
+            </article>
+        </section>
+        <section class="d-flex">
+            <a href="../index.html" class="pt-5"><img src="../Images/logo.jpg"
+                                                      alt="logo de la página principal de la guardería" width="100px"
+                                                      class="rounded-circle"><span class="titulo">GUARDERÍACC</span></a>
+            <!-- Contenedor para el formulario de inicio de sesión y registro-->
+            <article class="bordeDerecho" id="login">
+                <form action="#" id="form1" name='form1' autocomplete="off">
+                    <input type="text" class="form-control mb-1" id="dni" placeholder="Usuario" required>
+                    <input type="password" class="form-control mb-3" id="password" placeholder="Contraseña"
+                           required>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="check" onclick="showPassword()">
+                        <label class="form-check-label check fw-light" for="check">mostrar contraseña</label>
+                    </div>
+                    <!--
+                        Botón que nos redirige a la página de "registro", sin tener en cuenta el
+                        enlace establecido en el formulario, del atributo "action".
+                    -->
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="iniciarSesion()">Login</button>
+                    <button class="btn btn-secondary btn-sm"
+                            onclick="document.form1.action = 'HTML/registro.html'; document.form1.submit()">Registro
+                    </button>
+                </form>
+            </article>
+
+            <!--Artículo 3-->
+            <!--Contenedor para el botón de close session-->
+            <article id="cerrarSesion" class="bordeDerecho">
+                <span class="titulo fs-2" id="usuario"></span>
+                <button class="btn btn-primary btn-sm" onclick="cerrarSesion()">Cerrar Sesion</button>
+            </article>
+        </section>
+    </header>
+
+    <!--Barra de navegación: para encapsular el menú de navegación.
+    navbar-expand-sm: Lo que hace es que cuando la pantalla del dispositivo es pequeña muestra el menú hamburguesa
+    -->
+    <nav class="navbar navbar-expand-sm fondo">
+        <div class="container-fluid">
+            <button class="navbar-toggler btn btn-outline-primary border-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <!--Hipervínculo 1-->
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white dropdown-toggle" href="preciosServicios.html" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                        <!--Menú desplegable-->
+                        <ul class="dropdown-menu bg-black">
+                            <li class="dropdown-item"><a href="preciosServicios.html#cuidado"
+                                                         class="nav-link text-white bg-black rounded-pill">Cuidado
+                                diario</a>
+                            </li>
+                            <li class="dropdown-item"><a href="preciosServicios.html#actividades"
+                                                         class="nav-link text-white bg-black rounded-pill">Programas de
+                                actividades</a></li>
+                            <li class="dropdown-item"><a href="preciosServicios.html#transporte"
+                                                         class="nav-link text-white bg-black rounded-pill">Servicio de
+                                transporte</a></li>
+                            <li class="dropdown-item"><a href="preciosServicios.html#verano"
+                                                         class="nav-link text-white bg-black rounded-pill">Programas de
+                                verano</a></li>
+                            <li class="dropdown-item"><a href="preciosServicios.html#precios"
+                                                         class="nav-link text-white bg-black rounded-pill">Precios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Hipervínculo 2-->
+                    <li class="nav-item dropdown"><a href="actividades.html"
+                                                     class="nav-link dropdown-toggle text-white" role="button"
+                                                     data-bs-toggle="dropdown" aria-expanded="false">Actividades</a>
+                        <!--Menú desplegable-->
+                        <ul class="dropdown-menu bg-black">
+                            <li class="dropdown-item"><a href="actividades.html#arte"
+                                                         class="nav-link text-white bg-black rounded-pill">Clases de
+                                arte</a></li>
+                            <li class="dropdown-item"><a href="actividades.html#musica"
+                                                         class="nav-link text-white bg-black rounded-pill">Clases de
+                                música</a></li>
+                            <li class="dropdown-item"><a href="actividades.html#creativo"
+                                                         class="nav-link text-white bg-black rounded-pill">Proyectos
+                                creativos</a>
+                            </li>
+                            <li class="dropdown-item"><a href="actividades.html#excursiones"
+                                                         class="nav-link text-white bg-black rounded-pill">Excursiones</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Hipervínculo 3-->
+                    <li class="nav-item"><a href="contacto.html" target="_blank"
+                                            class="nav-link text-white">Contacto</a>
+                    </li>
+                    <!--Hipervínculo 4: Nos muestra información sobre la accesibilidad web-->
+                    <li class="nav-item"><a href="../index.html#accesibilidad"
+                                            class="nav-link text-white">Accesibilidad</a>
+                    </li>
+
+                </ul>
+
+                <!-- Formulario de búsqueda -->
+                <form class="d-flex buscar" role="search" id="formulario">
+                    <input class="form-control me-2" type="search" id="busqueda" name="q" placeholder="Buscar"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success" id="search-button" type="submit">Buscar</button>
+                </form>
+                <!-- Contenedor para mostrar los resultados de la búsqueda -->
+                <div id="results"></div>
+                <!-- Carga el script que maneja la búsqueda y los resultados -->
+                <script src="../server.js"></script>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!--He usado la página https://formspree.io/ para que todos los mensajes que envía el usuario se
+    muestren ahí junto con sus datos. Si quieres probarlo tendrás que registrarte en dicha página y
+    cambiar la url del action con el tuyo-->
+    <form action="https://formspree.io/f/xpzeadya" method="POST"
+          autocomplete="off" id="form">
+        <h3 class="text-center mt-3 titulo">Datos de contacto</h3>
+        <hr>
+        <br/>
+        <!-- Agrupamos elementos relacionados del formulario -->
+        <fieldset style="margin-top: 2%;">
+            <legend><b>Contacto<span style="color: red;">*</span>:</b></legend>
+            <select name="prefijo">
+                <option value="sr">Sr</option>
+                <option value="sra">Sra Srta</option>
+            </select>
+            <input class="form-text" type="text" name="nombre" placeholder="Nombre" required>
+            <input class="form-text" type="text" name="apellidos" placeholder="Apellidos" required>
+            <br/>
+            <hr>
+
+            <select name="tipo">
+                <option value="calle">Calle</option>
+                <option value="avenida">Avenida</option>
+                <option value="plaza">Plaza</option>
+                <option value="travesia">Travesía</option>
+            </select>
+
+            <input class="form-text" type="text" name="direccion" placeholder="Dirección" required>
+            <input class="form-text" type="text" name="ciudad" placeholder="Ciudad" required>
+            <br/>
+            <hr>
+            <label for="telefono">Telefono:
+                <input class="form-text" type="tel" name="telefono" id="telefono" maxlength="9" placeholder="Teléfono"
+                       required>
+            </label>
+            <hr>
+            <div class="input-group mb-3" style="width: 50%">
+                <input type="email" class="form-control " placeholder="username"
+                       aria-label="username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+
+        </fieldset>
+
+        <section class="mt-2">
+            <!--Script que nos permite obtener la fecha actual en la que se escribe el usuario escribe el asunto
+            cuando se pone en contacto con el servicio de atención al cliente de la guardería.-->
+            <script>
+                let fecha = document.getElementById('fecha')
+                let hoy = new Date();
+                fecha.innerHTML = hoy.toLocaleDateString();
+            </script>
+            <label for="fecha">Fecha:
+                <input type="datetime-local" name="fecha" id="fecha"></label>
+        </section>
+        <hr>
+
+        <!--El usuario añade el mensaje-->
+        <section style="margin-top: 2%; margin-left: 1rem">
+            <b>Asunto</b> <br>
+            <textarea name="message" rows="10" cols="40" form="form" required></textarea>
+        </section>
+
+        <section style="margin-top: 2%; text-align: center;">
+            <button class="btn btn-secondary" type="submit" value="Enviar">Enviar</button>
+            <button class="btn btn-secondary" type="reset" value="Limpiar">Limpiar</button>
+        </section>
+    </form>
+
+    <!-- Pie de página -->
+    <!--
+            Dividimos el pie de página en dos secciones, uno para los enlaces rápidos
+            y otro para la dirección y las redes sociales.
+        -->
+    <footer class="fondo text-white d-flex justify-content-center align-content-center">
+
+        <!--Sección para los enlaces rápidos-->
+        <section>
+            <header>
+                <h4 class="text-center"><em>ENLACES RÁPIDOS</em></h4>
+            </header>
+            <ul class="news d-flex justify-content-start align-content-start">
+                <li>
+                    <a href="../HTML/preguntas_frecuentes.html" class="text-white">Preguntas frecuentes</a>
+                </li>
+                <span> | </span>
+                <!-- Para los demás enlaces, he utilizado la página del Campus de Extremadura -->
+                <li>
+                    <a href="http://campusvirtual.unex.es/" class="text-white">Aviso Legal</a>
+                </li>
+                <span>|</span>
+                <li>
+                    <a href="http://campusvirtual.unex.es/" class="text-white">Política de privacidad</a>
+                </li>
+            </ul>
+            <hr>
+            <small>@ 2020 Universidad de Extremadura - Jose Luis O. E. N.</small>
+        </section>
+
+        <!--Sección para la dirección y Redes sociales-->
+
+        <section>
+            <header>
+                <h4 class="text-center"><em>CONTACTOS</em></h4>
+            </header>
+            <article class="d-flex justify-content-end align-content-end">
+                <address class="text-center ml-4">
+                    <ul class="news">
+                        <li>Teléfono:<a href="tel:+34927217703">+34 927-217-703</a></li>
+                        <li>Email: <a href="mailto:guardecc@unex.es">guardecc@unex.es</a></li>
+                    </ul>
+                    <small>C/ Virgen de la Montaña, 14
+                        10003 Cáceres</small>
+                </address>
+            </article>
+        </section>
+    </footer>
+</div>
+
+<!--Bootstrap JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
