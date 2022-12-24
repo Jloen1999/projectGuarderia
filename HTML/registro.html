@@ -30,6 +30,7 @@
     <!-- JS -->
     <script src="../js/funciones.js" defer></script>
     <script src="../js/ClaseUsuario.js" defer></script>
+    <script src="../js/moment.js" defer></script>
     <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -54,7 +55,7 @@
                 <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
                 <a href="https://facebook.com"><i class="bi bi-twitter"></i></a>
                 <a href="https://facebook.com"><i class="bi bi-instagram"></i></a>
-                 <!--Elige el idioma de la página-->
+                <!--Elige el idioma de la página-->
                 <label for="idioma">Idioma:</label>
                 <select id="idioma">
                     <option value="en">Inglés</option>
@@ -68,8 +69,8 @@
         </section>
         <section class="d-flex">
             <a href="../index.html" class="pt-5"><img src="../Images/logo.jpg"
-                                                   alt="logo de la página principal de la guardería" width="100px"
-                                                   class="rounded-circle"><span class="titulo">GUARDERÍACC</span></a>
+                                                      alt="logo de la página principal de la guardería" width="100px"
+                                                      class="rounded-circle"><span class="titulo">GUARDERÍACC</span></a>
             <!-- Contenedor para el formulario de inicio de sesión y registro-->
             <article class="bordeDerecho" id="login">
                 <form action="#" id="form1" name='form1' autocomplete="off">
@@ -161,10 +162,12 @@
                         </ul>
                     </li>
                     <!--Hipervínculo 3-->
-                    <li class="nav-item"><a href="contacto.html" target="_blank" class="nav-link text-white">Contacto</a>
+                    <li class="nav-item"><a href="contacto.html" target="_blank"
+                                            class="nav-link text-white">Contacto</a>
                     </li>
                     <!--Hipervínculo 4: Nos muestra información sobre la accesibilidad web-->
-                    <li class="nav-item"><a href="../index.html#accesibilidad" class="nav-link text-white">Accesibilidad</a>
+                    <li class="nav-item"><a href="../index.html#accesibilidad"
+                                            class="nav-link text-white">Accesibilidad</a>
                     </li>
 
                 </ul>
@@ -175,7 +178,7 @@
                            aria-label="Search">
                     <button class="btn btn-outline-success" id="search-button" type="submit">Buscar</button>
                 </form>
-                 <!-- Contenedor para mostrar los resultados de la búsqueda -->
+                <!-- Contenedor para mostrar los resultados de la búsqueda -->
                 <div id="results"></div>
                 <!-- Carga el script que maneja la búsqueda y los resultados -->
                 <script src="../server.js"></script>
@@ -184,83 +187,98 @@
         </div>
     </nav>
 
-<!-- Contenido -->
-<section class="container-fluid">
-    <h2 class="text-center titulo">Registro de usuario</h2>
-    <hr>
-
-    <!--
-        Dividimos los elementos del formulario en grupos de campos para tenerlos
-        más organizados.
-    -->
-    <form action="#" autocomplete="off" id="registro">
-
-        <fieldset class="margen">
-            <legend><b>Datos<span style="color: red;">*</span>:</b></legend>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" minlength="3" required>
-            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" minlength="3"  required>
-            <br/>
-            <hr>
-            <input class="form-text" type="text" id="direccion" name="direccion" placeholder="Dirección" minlength="8" required>
-            <br/>
-            <hr>
-
-            <input class="form-text" type="text" id="dnir" name="dni" minlength="8" maxlength="9"  placeholder="DNI">
-            <!-- Uso del tipo "password" para la ocultación del texto de entrada -->
-            <input type="password" id="passwordr" name="password" placeholder="Contraseña">
-        </fieldset>
-
-        <hr>
-        <label for="parentesco">Parentesco:
-            <select name="parentesco" id="parentesco">
-                <option value="abuelo">Abuelo</option>
-                <option value="abuela">Abuela</option>
-                <option value="padre">Padre</option>
-                <option value="madre">Madre</option>
-                <option value="hermano">Hermano</option>
-                <option value="hermana">Hermana</option>
-                <option value="primo">Primo</option>
-                <option value="prima">Prima</option>
-                <option value="otro">Otro</option>
-            </select>
-        </label>
-
-        <!--Para añadir un número de teléfono.-->
-        <article class="margen">
-            <label class="form-text" for="telefono"><b>Contacto telefónico<span style="color: red;">*</span>:</b></label><br/>
-            <!-- Uso del tipo "tel" para la introducción de un número de teléfono -->
-            <input class="form-text" type="tel" name="telefono" id="telefono" placeholder="Número de teléfono">
-        </article>
-
-        <!-- Uso del tipo "date" para seleccionar una fecha -->
-        <article class="margen">
-            <label for="fecha"><b>Fecha de nacimiento<span style="color: red;">*</span>:</b></label><br/>
-            <input type="date" name="fecha" id="fecha" required>
-        </article>
-
-        <!-- Definimos botones de opciones "radio", permitiendo seleccionar sólo una -->
-        <article class="margen">
-            <label for="genero"><b>Sexo:</b></label><br/>
-            <input type="radio" name="genero" id="genero" value="Masculino" checked>
-            <label for="masculino">Masculino</label><br/>
-            <input type="radio" name="genero" id="masculino" value="Femenino">
-            <label for="femenino">Femenino</label><br/>
-            <input type="radio" name="genero" id="femenino" value="Otro">
-            <label>Otro</label>
-        </article>
+    <!-- Contenido -->
+    <section class="container-fluid">
+        <h2 class="text-center titulo">Registro de usuario</h2>
         <hr>
 
-        <article class="text-center">
-            <a href="../index.html">
-                <button class="btn btn-secondary" type="button" onclick="registrarUsuario()">Registrarse</button>
-            </a>
-            <button class="btn btn-secondary" type="reset" value="Limpiar">Limpiar</button>
-        </article>
-    </form>
+        <!--
+            Dividimos los elementos del formulario en grupos de campos para tenerlos
+            más organizados.
+        -->
+        <form action="#" autocomplete="off" id="registro">
 
-</section>
+            <fieldset class="margen">
+                <legend><b>Datos<span style="color: red;">*</span>:</b></legend>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" minlength="3" required>
+                <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" minlength="3" required>
+                <br/>
+                <hr>
+                <input class="form-text" type="text" id="direccion" name="direccion" placeholder="Dirección"
+                       minlength="8" required>
+                <br/>
+                <hr>
 
-<!-- Pie de página -->
+                <div class="mb-3">
+                    <label for="dnir" class="form-label"></label>
+                    <input class="form-text" type="text" id="dnir" name="dni" minlength="8" maxlength="9"
+                           placeholder="DNI" aria-description="dniHelp">
+                    <div id="dniHelp" style="font-size: 10px" class="pl-6">Entre 8 y 9 caracteres</div>
+                </div>
+
+                <div class="mb-3 ">
+                    <label for="passwordHelp" class="form-label"></label>
+                <!-- Uso del tipo "password" para la ocultación del texto de entrada -->
+                    <input type="password" id="passwordr" name="password" placeholder="Contraseña" minlength="8" maxlength="9"
+                           aria-description="passwordHelp">
+                    <div id="passwordHelp" style="font-size: 10px" class="pl-6">Entre 8 y 9 caracteres</div>
+                </div>
+
+
+            </fieldset>
+
+            <hr>
+            <label for="parentesco">Parentesco:
+                <select name="parentesco" id="parentesco">
+                    <option value="abuelo">Abuelo</option>
+                    <option value="abuela">Abuela</option>
+                    <option value="padre">Padre</option>
+                    <option value="madre">Madre</option>
+                    <option value="hermano">Hermano</option>
+                    <option value="hermana">Hermana</option>
+                    <option value="primo">Primo</option>
+                    <option value="prima">Prima</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </label>
+
+            <!--Para añadir un número de teléfono.-->
+            <article class="margen">
+                <label class="form-text" for="telefono"><b>Contacto telefónico<span
+                        style="color: red;">*</span>:</b></label><br/>
+                <!-- Uso del tipo "tel" para la introducción de un número de teléfono -->
+                <input class="form-text" type="tel" name="telefono" id="telefono" placeholder="Número de teléfono">
+            </article>
+
+            <!-- Uso del tipo "date" para seleccionar una fecha -->
+            <article class="margen">
+                <label for="fecha"><b>Fecha de nacimiento<span style="color: red;">*</span>:</b></label><br/>
+                <input type="date" name="fecha" id="fecha" required>
+            </article>
+
+            <!-- Definimos botones de opciones "radio", permitiendo seleccionar sólo una -->
+            <article class="margen">
+                <label for="genero"><b>Sexo:</b></label><br/>
+                <input type="radio" name="genero" id="genero" value="Masculino" checked>
+                <label for="masculino">Masculino</label><br/>
+                <input type="radio" name="genero" id="masculino" value="Femenino">
+                <label for="femenino">Femenino</label><br/>
+                <input type="radio" name="genero" id="femenino" value="Otro">
+                <label>Otro</label>
+            </article>
+            <hr>
+
+            <article class="text-center">
+                <a href="../index.html">
+                    <button class="btn btn-secondary" type="button" onclick="registrarUsuario()">Registrarse</button>
+                </a>
+                <button class="btn btn-secondary" type="reset" value="Limpiar">Limpiar</button>
+            </article>
+        </form>
+
+    </section>
+
+    <!-- Pie de página -->
     <!--
             Dividimos el pie de página en dos secciones, uno para los enlaces rápidos
             y otro para la dirección y las redes sociales.
@@ -274,7 +292,7 @@
             </header>
             <ul class="news d-flex justify-content-start align-content-start">
                 <li>
-                    <a href="../HTML/preguntas_frecuentes.html" class="text-white">Preguntas frecuentes</a>
+                    <a href="preguntas_frecuentes.html" class="text-white">Preguntas frecuentes</a>
                 </li>
                 <span> | </span>
                 <!-- Para los demás enlaces, he utilizado la página del Campus de Extremadura -->
